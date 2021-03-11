@@ -1,22 +1,27 @@
 package com.jpa.test.entites;
 
-	import javax.persistence.Column;
+	import java.util.List;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
 	import javax.persistence.GeneratedValue;
 	import javax.persistence.GenerationType;
 	import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 	@Entity
 	public class Category {
 
 		@Id
 		@GeneratedValue(strategy = GenerationType.IDENTITY)
-		@Column(length=5)
 		private short cId;
 		@Column(length=10)
 		private String cTitle;
 		@Column(length=50)
 		private String cDesc;
+		
+		@OneToMany(mappedBy="cId")
+		List<Product>product;
 		
 		public Category() {
 			super();

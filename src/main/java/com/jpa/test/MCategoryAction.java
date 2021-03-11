@@ -11,41 +11,41 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.jpa.test.dao.UserRepository;
-import com.jpa.test.entites.User;
-
-
+import com.jpa.test.dao.CategoryRepository;
+import com.jpa.test.entites.Category;
 
 
 @RestController
-@RequestMapping("/user")
-public class UserAction {
-
+@RequestMapping("/category")
+public class MCategoryAction {
+	
+	
 	@Autowired
-	UserRepository userRepository;
+	CategoryRepository CategoryRepository;
 	
 	@PostMapping("/")
-	public void createUser(User user) {
-		userRepository.save(user);
+	public void createUser(Category category) {
+		CategoryRepository.save(category);
 	}
 	
 	@GetMapping("/{id}")
-	public User getSingleUser(@PathVariable short id) {
-		return userRepository.findById(id).get();
+	public Category getSingleUser(@PathVariable short id) {
+		return CategoryRepository.findById(id).get();
 	}
 	
 	@GetMapping("/")
-	public List<User> readAll() {
-		return (List<User>) userRepository.findAll();
+	public List<Category> readAll() {
+		return (List<Category>) CategoryRepository.findAll();
 	}
 	
 	@PutMapping("/{id}")
-	public void updateUser(@PathVariable int id,User user) {
-		userRepository.save(user);
+	public void updateUser(@PathVariable short id,Category category) {
+		CategoryRepository.save(category);
 	}
 	
 	@DeleteMapping("/{id}")
 	public void deleteUser(@PathVariable short id) {
-		userRepository.deleteById(id);
+		CategoryRepository.deleteById(id);
 	}
+
 }

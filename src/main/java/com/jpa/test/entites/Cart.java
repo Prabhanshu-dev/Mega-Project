@@ -9,34 +9,26 @@ public class Cart {
 	
 	@Id
 	@Column(length=5)
-	private short cId;
+	private short cartId;
 	@Column(length=5)
 	private short pId;
+	private short userid;;
 	private short Quantity;
-	
-	public Cart()
-	{
+	public Cart() {
 		super();
+		// TODO Auto-generated constructor stub
 	}
-	
-	public Cart(short cId, short pId, short quantity) {
+	public Cart(short pId, short userid, short quantity) {
 		super();
-		this.cId = cId;
 		this.pId = pId;
-		this.Quantity = quantity;
-	}
-
-	public short getQuantity() {
-		return Quantity;
-	}
-	public void setQuantity(short quantity) {
+		this.userid = userid;
 		Quantity = quantity;
 	}
-	public short getcId() {
-		return cId;
+	public short getCartId() {
+		return cartId;
 	}
-	public void setcId(short cId) {
-		this.cId = cId;
+	public void setCartId(short cartId) {
+		this.cartId = cartId;
 	}
 	public short getpId() {
 		return pId;
@@ -44,10 +36,24 @@ public class Cart {
 	public void setpId(short pId) {
 		this.pId = pId;
 	}
-	
+	public short getUserid() {
+		return userid;
+	}
+	public void setUserid(short userid) {
+		this.userid = userid;
+	}
+	public short getQuantity() {
+		return Quantity;
+	}
+	public void setQuantity(short quantity) {
+		Quantity = quantity;
+	}
 	@Override
 	public String toString() {
-		return "Cart [cId=" + cId + ", pId=" + pId + ", Quantity=" + Quantity + "]";
+		return "Cart [cartId=" + cartId + ", pId=" + pId + ", userid=" + userid + ", Quantity=" + Quantity + "]";
 	}
+	
+	
+	
 
 }

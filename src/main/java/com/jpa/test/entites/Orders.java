@@ -18,7 +18,7 @@ public class Orders {
      @Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
     
-	private int OrderId;
+	private short OrderId;
      @Column(length=5)
 	private short  userid;
      @Column(length=5)
@@ -49,10 +49,10 @@ public class Orders {
 	this.orderquantity = orderquantity;
 	this.ShippingId = ShippingId;
 }
-	public int getOrderId() {
+	public short getOrderId() {
 		return OrderId;
 	}
-	public void setOrderId(int orderId) {
+	public void setOrderId(short orderId) {
 		this.OrderId = orderId;
 	}
 	public short getUserid() {

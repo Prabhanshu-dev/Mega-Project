@@ -4,34 +4,34 @@ package com.jpa.test.entites;
 	import javax.persistence.GeneratedValue;
 	import javax.persistence.GenerationType;
 	import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 	@Entity
 	public class Product {
 
 		@Id
 		@GeneratedValue(strategy = GenerationType.IDENTITY)
-		@Column(length=5)
+	
 		private short pId;
 		@Column(length=10)
 		private String pTitle;
 		@Column(length = 50)
 		private String pDesc;
 		private String pPhoto;
-		@Column(length=5)
 		private short pPrice;
-		@Column(length=5)
 		private short pDiscount;
-		@Column(length=5)
 		private short pQuantity;
-		@Column(length=5)
-		private short cId;
+	//	private short cId;
+		
+		@ManyToOne
+		private Category cId;
 		
 		public Product() {
 			super();
 			// TODO Auto-generated constructor stub
 		}
 
-		public Product(String pTitle, String pDesc, String pPhoto, short pPrice, short pDiscount, short pQuantity, short cId) {
+		public Product(String pTitle, String pDesc, String pPhoto, short pPrice, short pDiscount, short pQuantity) {
 			super();
 			this.pTitle = pTitle;
 			this.pDesc = pDesc;
@@ -39,7 +39,7 @@ package com.jpa.test.entites;
 			this.pPrice = pPrice;
 			this.pDiscount = pDiscount;
 			this.pQuantity = pQuantity;
-			this.cId = cId;
+		//	this.cId = cId;
 		}
 
 		public short getpId() {
@@ -98,18 +98,18 @@ package com.jpa.test.entites;
 			this.pQuantity = pQuantity;
 		}
 
-		public short getcId() {
+		/*public short getcId() {
 			return cId;
 		}
 
 		public void setcId(short cId) {
 			this.cId = cId;
-		}
+		}*/
 
 		@Override
 		public String toString() {
 			return "Product [pId=" + pId + ", pTitle=" + pTitle + ", pDesc=" + pDesc + ", pPhoto=" + pPhoto + ", pPrice="
-					+ pPrice + ", pDiscount=" + pDiscount + ", pQuantity=" + pQuantity + ", cId=" + cId + "]";
+					+ pPrice + ", pDiscount=" + pDiscount + ", pQuantity=" + pQuantity + "]";
 		}
 
 		

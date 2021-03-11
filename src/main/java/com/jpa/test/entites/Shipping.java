@@ -12,10 +12,10 @@ public class Shipping {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int ShippingId;
-	private int OrderId;
+	private short ShippingId;
+	private short OrderId;
 	private Date Shipping_date;
-	private int Shipping_cost;
+	private short Shipping_cost;
 	
 	
 	public Shipping() {
@@ -23,7 +23,7 @@ public class Shipping {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Shipping(int orderId, Date Shipping_date, int Shipping_cost) {
+	public Shipping(short orderId, Date Shipping_date, short Shipping_cost) {
 		super();
 		OrderId = orderId;
 		this.Shipping_date = Shipping_date;
@@ -31,19 +31,19 @@ public class Shipping {
 	}
 
 
-	public int getShippingId() {
+	public short getShippingId() {
 		return ShippingId;
 	}
 
-	public void setShippingId(int shippingId) {
+	public void setShippingId(short shippingId) {
 		ShippingId = shippingId;
 	}
 
-	public int getOrderId() {
+	public short getOrderId() {
 		return OrderId;
 	}
 
-	public void setOrderId(int orderId) {
+	public void setOrderId(short orderId) {
 		OrderId = orderId;
 	}
 
@@ -56,11 +56,11 @@ public class Shipping {
 		Shipping_date = shipping_date;
 	}
 
-	public int getShipping_cost() {
+	public short getShipping_cost() {
 		return Shipping_cost;
 	}
 
-	public void setShipping_cost(int shipping_cost) {
+	public void setShipping_cost(short shipping_cost) {
 		Shipping_cost = shipping_cost;
 	}
 
